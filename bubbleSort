@@ -1,0 +1,28 @@
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args){
+        int x,i,j;
+        Scanner myObj = new Scanner(System.in);
+        System.out.println("Enter the length of an Array:");
+        x = myObj.nextInt();
+        int[] Arr=new int[x];
+    System.out.println("Enter Array Elements:");
+    for(i=0;i<x;i++){
+        Arr[i]=myObj.nextInt();
+    }
+    int temp;
+    for(i=0;i<x;i++){
+    for(j=0;j<(x-1)-i;j++){
+        if(Arr[j]>Arr[j+1]){
+            temp=Arr[j];
+            Arr[j]=Arr[j+1];
+            Arr[j+1]=temp;
+        }
+    }
+    }
+    System.out.println("Array Elements are :");
+    for(i=0;i<x;i++){
+        System.out.print(" "+Arr[i]);
+    }
+    }
+}

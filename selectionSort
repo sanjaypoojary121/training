@@ -1,0 +1,29 @@
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args){
+        int x,i,j;
+        Scanner myObj = new Scanner(System.in);
+        System.out.println("Enter the length of an Array:");
+        x = myObj.nextInt();
+        int[] Arr=new int[x];
+    System.out.println("Enter Array Elements:");
+    for(i=0;i<x;i++){
+        Arr[i]=myObj.nextInt();
+    }
+    int min_index,temp;
+    for(i=0;i<x;i++){
+        min_index=i;
+        for(j=i+1;j<x;j++){
+            if(Arr[j]<Arr[min_index])
+            min_index=j;
+        }
+        temp=Arr[i];
+        Arr[i]=Arr[min_index];
+        Arr[min_index]=temp;
+    }
+    System.out.println("Array Elements are :");
+    for(i=0;i<x;i++){
+        System.out.print(" "+Arr[i]);
+    }
+    }
+}
